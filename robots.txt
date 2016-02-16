@@ -1,0 +1,9 @@
+User-agent: *
+Crawl-delay: 2
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Sosospider
+Disallow: /
