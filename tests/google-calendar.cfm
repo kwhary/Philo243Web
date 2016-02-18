@@ -1,15 +1,11 @@
 <cfscript>
 
-	this.clientID = '103010000814539364692.apps.googleusercontent.com';
-	this.oauthURL = 'https://accounts.google.com/o/oauth2/auth';
-	this.tokenURL = 'https://accounts.google.com/o/oauth2/token';
+	this.clientID = 'local-cf@philolodge-net.iam.gserviceaccount.com';
+	this.google.oauthURL = 'https://accounts.google.com/o/oauth2/auth';
+	this.google.tokenURL = 'https://accounts.google.com/o/oauth2/token';
+	this.google.tokenURL_OLD = 'https://www.googleapis.com/oauth2/v4/token';
 	this.scope = 'https://www.googleapis.com/auth/calendar.readonly';
 
-	this.gc = createObject('component', 'com.CF-GoogleCal-V3-master.googlecalendarv3');
-	// this.gc.getAllCalendars();
-
-	this.accessGranted = this.oauthURL & '?scope=' & this.scope & '&client_id=' & this.clientID & '&state=ready&prompt=none&include_granted_scopes=true&response_type=code&redirect_uri=http://' & cgi.server_name & ':' & cgi.server_port & cgi.script_name;
-	this.oauth = curlMe(url=this.accessGranted);
 
 	// NOTE: generate a JWT for authorization. => https://developers.google.com/identity/protocols/OAuth2ServiceAccount#authorizingrequests
 
@@ -17,9 +13,10 @@
 	this.google.auth.headerEncoded = base64urlEncode('{"alg":"RS256","typ":"JWT"}');
 
 	// NOTE: Format the claim set
-	this.google.auth.iss = 'local-cf@philolodge-net.iam.gserviceaccount.com';
+	// this.google.auth.iss = 'local-cf@philolodge-net.iam.gserviceaccount.com';
+	this.google.auth.iss = this.clientID;
 	this.google.auth.scope = this.scope;
-	this.google.auth.aud = 'https://www.googleapis.com/oauth2/v4/token';
+	this.google.auth.aud = this.google.tokenURL;
 	this.google.auth.time = now();
 	this.google.auth.unixTime = dateDiff('s', createDate(1970,1,1), createODBCDateTime(this.google.auth.time));
 	this.google.auth.exp = dateDiff('s', createDate(1970,1,1), createODBCDateTime(dateAdd('h', 1, this.google.auth.time)));
@@ -34,7 +31,9 @@
 	// NOTE: Request the access token
 	this.google.auth.grantType = encodeForURL('urn:ietf:params:oauth:grant-type:jwt-bearer');
 	this.google.auth.assertion = this.google.auth.headerEncoded & '.' & this.google.auth.claimsetEncoded & '.' & this.google.auth.signatureHash;
-	this.google.auth.tokenData = 'grant_type=' & this.google.auth.grantType & '&' & this.google.auth.assertion;
+	this.google.auth.tokenData = 'grant_type=' & this.google.auth.grantType & '&assertion=' & this.google.auth.assertion;
+	// this.google.auth.tokenURL = 'https://www.googleapis.com/oauth2/v4/token';
+	this.google.auth.token = curlMe(method='put', url=this.google.tokenURL, data=this.google.auth.tokenData);
 
 
 
@@ -61,12 +60,15 @@
 
 
 
+
+
+// https://accounts.google.com/o/oauth2/v2/auth?prompt=none&access_type=online&state=testing&response_type=code&redirect_uri=http%3a%2f%2f127.0.0.1%3a8501&scope=email%20profile&client_id=local-cf@philolodge-net.iam.gserviceaccount.com
+
+// curl -v -d 'grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2NhbC1jZkBwaGlsb2xvZGdlLW5ldC5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsICJzY29wZSI6Imh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2FsZW5kYXIucmVhZG9ubHkiLCAiYXVkIjoiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL28vb2F1dGgyL3Rva2VuIiwgImV4cCI6IjE0NTU3NTc5ODAiLCAiaWF0IjoiMTQ1NTc1NDM4MCJ9.228F97244B9C678B57CA689C89AFD1B91E10C9CCE72F50C1FC1040D68CA1D18D' https://accounts.google.com/o/oauth2/token
+
+
+
 	writeDump(this);
-
-	writeOutput(this.oauth.resultRaw);
-
-
-
 
 
 
