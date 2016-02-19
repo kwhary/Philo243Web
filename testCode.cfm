@@ -1,1 +1,0 @@
-writeOutput("	jQuery('##wrapper').append('<div class=''panel radius'' id=''dateWrapper_' + cntr '></div><h6 align=''center'' id=''dateInfo_' + cntr '></h6>');");

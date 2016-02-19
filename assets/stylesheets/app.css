@@ -1,0 +1,165 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+body {background: #192532 url(../images/master-bg.jpg) repeat-x top left;}
+body {color:white}
+
+p,h5.index {color: #617E86; text-align:center;}
+h5.indexSub {color: #F5F6CE; text-align:center;}
+h4,h5,h5.trestleboard, h5.sideBarFader {color: #A09AFF}
+h5.sideBarFader {text-align:center;}
+p.profileLeft {text-align:left;}
+p.byLawsLeft {text-align:left;}
+
+table { background: black; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; margin: 0 0 18px; border: 1px solid rgba(0, 0, 0, 0.6);}
+table tbody tr.even, table tbody tr.alt { background: #262525; }
+
+table tbody tr:nth-child(even) { background: #262525; }
+
+/* The Grid ---------------------- */
+/*.row { width: 940px; max-width: 100%; min-width: 768px; margin: 0 auto; } */
+
+/* .twelve, .row .twelve { margin-bottom: 1px; padding-bottom: 1px; border-bottom-width:1px;} */
+/*  Margin, Border, Padding, Content */
+.column { float: left; min-height: 1px; padding: 0 8px; position: relative; }
+.columns { float: left; min-height: 1px; padding: 0px 2px 0px 2px; position: relative; } /* padding T R B L */
+
+.panel { 	
+	 background: rgb(41 ,61, 81);   /* Fall back color for IE*/
+background: rgba(0, 0, 0, 0.1); 
+	 border: solid 0.1px rgb(41 ,61, 81);   /* Fall back color for IE*/	
+border: solid 0.1px rgba(0, 0, 0, 0.6);
+margin: 0 0 5px 0; padding: 20px; }
+
+.panel.callout { 
+/* background: #37516C; */
+background: rgb(41 ,61, 81);   /* Fall back color for IE*/
+background: rgba(0, 0, 0, 0.1); 
+color: #fff; 
+	border: solid 0.1px rgb(41 ,61, 85);/* Fall back color for IE*/
+border: solid 0.1px rgba(0, 0, 0, 0.6); 	 
+-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5);
+-moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5); 
+box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5); }
+	
+.panel.callout a { color: #fff; }
+
+ul, ol {color: #617E86;}
+
+ul.none {list-style-type: none;}
+
+ul.nav-bar.middle { font-size: 14px; line-height: 1.6; margin-bottom: 1px; list-style-position: outside; } /*Overide the 17px margin-bottom */
+.imgBorder { padding:4px;  border:1px solid #727272;}
+#imgBorder { padding:4px;  border:1px solid #727272;}
+
+.floatLeft { padding:4px; border:1px solid #727272; float: left; margin: 10px 10px 10px 0px; vertical-align: text-top;}
+.floatRight { padding:4px; border:1px solid #727272; float: right; margin: 10px 10px 10px 0px; vertical-align: text-top;}
+
+.floatleft p{ padding:2px; float: left; }
+.floatright p { padding:2px; float: right;}
+
+.button:hover, .button:focus { color: white; background-color: #37516C; }
+.button.primary:hover, .button.primary:focus { background-color: #37516C; }
+
+
+.text_line
+{ clear:both; margin-bottom:2px;
+}
+
+
+/* -----------------------------------------
+   Orbit Styles
+----------------------------------------- */
+
+
+#KMfader { background: url(spinner.gif) center center #192532 no-repeat; height: 300px; }
+#KMfader img { display: none; }
+#KMfader.orbit { background: none; }
+#KMfader.orbit img { display: block; }
+
+#KMfaderMobile { background: url(spinner.gif) center center #192532 no-repeat; height: 200px; }
+#KMfaderMobile img { display: none; }
+#KMfaderMobile.orbit { background: none; }
+#KMfaderMobile.orbit img { display: block; }
+
+#ProfileFader { background: url(spinner.gif) center center #192532 no-repeat; height: 209px; }
+#ProfileFader img { display: none; }
+#ProfileFader.orbit { background: none; }
+#ProfileFader.orbit img { display: block; }
+
+#sideBarFader { background: url(spinner.gif) center center #192532 no-repeat; height: 800px; }
+#sideBarFader img { display: none; }
+#sideBarFader.orbit { background: none; }
+#sideBarFader.orbit img { display: block; }
+
+
+#quoteSlider { background: url(spinner.gif) center center #192532 no-repeat; height: 800px; }
+#quoteSlider img { display: none; }
+#quoteSlider.orbit { background: none; }
+#quoteSlider.orbit img { display: block; }
+
+.orbit-wrapper span.pause { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: 0; background:  no-repeat; z-index: 4; opacity: 0; }
+
+.orbit-wrapper span.pause.active { background: no-repeat 0 -40px; }
+
+/* #aboutImageFader .orbit-wrapper span.pause { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: 0; background:  no-repeat; z-index: 4; opacity: 0; } */
+
+/* .orbit-wrapper #aboutImageFader #imgBorder .timer {display: none; visibility: hidden;}*/
+.orbit-wrapper .timer {display: none; visibility: hidden;}
+
+
+/* Captions ---------------------- */
+#ProfileFader.orbit-caption { display: none; font-family: inherit; }
+
+#ProfileFader.orbit-wrapper .orbit-caption { background: black; background: rgba(0, 0, 0, 0.6); z-index: 30; color: white; text-align: left; padding: 7px 0; font-size: 13px; position: absolute; right: 0; bottom: 0; width: 100%; }
+
+#sideBarFader.orbit-caption { display: none; font-family: inherit; }
+
+#sideBarFader.orbit-wrapper .orbit-caption { background: black; background: rgba(0, 0, 0, 0.6); z-index: 30; color: white; text-align: left; padding: 7px 0; font-size: 13px; position: absolute; right: 0; bottom: 0; width: 100%; }
+
+.button { width: auto; background: #192532; border: 1px solid #1e728c; -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; color: white; cursor: pointer; display: inline-block; font-family: inherit; font-size: 14px; font-weight: bold; line-height: 1; margin: 0; padding: 10px 20px 11px; position: relative; text-align: center; text-decoration: none; -webkit-transition: background-color 0.15s ease-in-out; -moz-transition: background-color 0.15s ease-in-out; -o-transition: background-color 0.15s ease-in-out; transition: background-color 0.15s ease-in-out; /* Hovers */ /* Sizes */ /* Colors */ /* Radii */ /* Layout */ /* Disabled ---------- */ }
+
+/* Accordian ------------- */
+ul.accordion > li > div.title { cursor: pointer; background: #37516C; padding: 15px; margin: 0; position: relative; border-left: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9; -webkit-transition: 0.15s background linear; -moz-transition: 0.15s background linear; -o-transition: 0.15s background linear; transition: 0.15s background linear; }
+
+ul.accordion > li.active .title { color: #617E86 }
+ul.accordion > li.active .title { background: #192532; padding-top: 13px; }
+ul.accordion > li.active { border-top: 3px solid #727272; }
+ul.accordion > li.active .content { background: #192532; display: block; border-left: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9; }
+
+
+
+/* Reveal Modal Windows --------------------- */
+.reveal-modal { background: #3A3A3A; z-index: 100;}
+.reveal-modal-bg { position: fixed; height: 100%; width: 100%; background: #000; background: rgba(0, 0, 0, 0.45); z-index: 40; display: none; top: 0; left: 0; }
+open-reveal-modal-error:not(.button) { font-size: 22px; font-size: 2.2rem; line-height: .5; position: absolute; bottom: 8px; right: 11px; color: #aaa; text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6); font-weight: bold; cursor: pointer; }
+
+/* Block Quote */
+blockquote { border-left: 0px solid #ddd; }
+/* -----------------------------------------
+  Nav Bar Overrides  
+----------------------------------------- */
+.mainNav {margin: 0px 0px 0px 0px; }
+.nav-bar { height: 40px; background: #37516C; margin-left: 0; margin-top: 0px; padding: 0; }
+.nav-bar > li { float: left; display: block; position: relative; padding: 0; margin: 0; border: 1px solid #37516C; border-right: none; line-height: 38px; -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset; -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset; box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset; }
+.nav-bar > li:first-child { -webkit-box-shadow: 0 0 0; -moz-box-shadow: 0 0 0; box-shadow: 0 0 0; }
+.nav-bar > li:last-child { border-right: solid 1px #333333; -webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset, 1px 0 0 rgba(255, 255, 255, 0.2); -moz-box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset, 1px 0 0 rgba(255, 255, 255, 0.2); box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2) inset, 1px 0 0 rgba(255, 255, 255, 0.2); }
+.nav-bar > li.active { background: #2ba6cb; border-color: #2284a1; }
+.nav-bar > li.active > a { color: white; cursor: default; }
+.nav-bar > li.active:hover { background: #213242; cursor: default; }
+.nav-bar > li:hover { background: #213242; }
+.nav-bar > li > a { color: #e6e6e6; }
+.nav-bar > li ul { margin-bottom: 0; }
+.nav-bar > li > a:first-child { position: relative; padding: 0 20px; display: block; text-decoration: none; font-size: 14px; }
+.nav-bar > li > input { margin: 0 10px; }
+
+
+
+

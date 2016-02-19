@@ -1,0 +1,19 @@
+#ProfileFader { background: url(spinner.gif) center center #192532 no-repeat; height: 209px; }
+#ProfileFader img { display: none; }
+#ProfileFader.orbit { background: none; }
+#ProfileFader.orbit img { display: block; }
+#ProfileFader.orbit-wrapper.timer { width: 40px; height: 40px; overflow: hidden; position: absolute; top: 10px; right: 10px; opacity: .1; cursor: pointer; z-index: 31; }
+#ProfileFader.orbit-wrapper span.rotator { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: -20px; background: url('../images/foundation/orbit/rotator-black.png') no-repeat; z-index: 3; }
+
+#aboutImageFader.orbit-wrapper span.rotator { display: block; width: 40px; height: 40px; position: absolute; top: 0; left: -20px; background: url('../images/foundation/orbit/rotator-black.png') no-repeat; z-index: 3; }
+
+
+
+#ProfileFader.orbit-caption { display: none; font-family: inherit; }
+
+#ProfileFader.orbit-wrapper .orbit-caption { background: black; background: rgba(0, 0, 0, 0.6); z-index: 30; color: white; text-align: left; padding: 7px 0; font-size: 13px; position: absolute; right: 0; bottom: 0; width: 100%; }
+
+#sideBarFader.orbit-caption { display: none; font-family: inherit; }
+
+#sideBarFader.orbit-wrapper .orbit-caption { background: black; background: rgba(0, 0, 0, 0.6); z-index: 30; color: white; text-align: left; padding: 7px 0; font-size: 13px; position: absolute; right: 0; bottom: 0; width: 100%; }
+
