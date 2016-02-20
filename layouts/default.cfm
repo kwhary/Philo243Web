@@ -76,9 +76,5 @@
 	</body>
 </html>
 
-<cfif rc.debugSession eq 1>
-	<cfoutput>#view('tests/debug/session')#</cfoutput>
-</cfif>
-
 <cfdump expand="false" var=#rc# label="##rc##">
 <cfdump expand="false" var=#request#>
