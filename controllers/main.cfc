@@ -4,8 +4,16 @@ component accessors=true {
 
 	function default( struct rc ) {
 		param name="rc.name" default="anonymous";
+		param name='rc.debugSession' default=0;
+		param name='rc.debugApplication' default=0;
+
 		rc.name = variables.greetingService.greet( rc.name );
 		// rc.rotateData = variables.rotateService.rotateInfo([1,2,3,4,5,6]);
+
+		if ( rc.debugApplication ) {
+			writeDump(var=application, expand=false, label='Application Scope');
+		}
+
 	}
 
 	function rotate_Quote() {
