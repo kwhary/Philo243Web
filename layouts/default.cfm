@@ -1,3 +1,13 @@
+<cfscript>
+	if (rc.action eq 'main.default') {
+		rc.showNav = 0;
+		rc.columnClass = 'twelve';
+	} else {
+		rc.showNav = 1;
+		rc.columnClass = 'nine';
+	}
+</cfscript>
+
 <!--- Drives the page to the requested content include --->
 <cfinclude template="main/pageDriver.cfm">
 
@@ -17,9 +27,7 @@
 		<link rel="stylesheet" href="/assets/stylesheets/foundation.min.css" />
 		<link rel="stylesheet" href="/assets/stylesheets/general_foundicons.css">
 		<link rel="stylesheet" href="/assets/stylesheets/app.css" /><!---  local modifications --->
-		<!--- <link rel="stylesheet" href="stylesheets/social_foundicons.css">
-		<link rel="stylesheet" href="stylesheets/general_enclosed_foundicons.css">--->
-		<title><CFOUTPUT>#pageTitle# - Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA</CFOUTPUT></title>
+		<title><cfoutput>#pageTitle# - Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA</cfoutput></title>
 		<!--- Custom Modernizr for Foundation --->
 		<script src="/assets/javascripts/modernizr.foundation.js"></script>
 
@@ -27,47 +35,51 @@
 		<script src="/assets/javascripts/foundation.min.js"></script>
 		<script src="/assets/javascripts/app.js"></script>
 	</head>
-<body>
+	<body>
+		<cfif rc.action eq 'main.default'>
+			<cfinclude template="main/keyMessageLoaderMobile.cfm">
+			<cfoutput>#view('main/key-messages')#</cfoutput>
+		</cfif>
 
-	<cfinclude template="main/keyMessageLoaderMobile.cfm">
+		<!-- Header and Nav -->
+		<cfoutput>#view('nav/main-nav')#</cfoutput>
+		<!-- End Header and Nav -->
 
-	<!-- Header and Nav -->
-	<cfoutput>#view('nav/main-nav')#</cfoutput>
-	<!-- End Header and Nav -->
+		<div class="row">
+			<cfif rc.showNav eq 1>
+				<div id="defaultSideBar" class="three columns hide-for-small">
+					<cfoutput>#view('nav/left-side-nav')#</cfoutput>
+				</div>
+			</cfif>
 
-	<div class="row">
-		<div id="defaultSideBar" class="three columns hide-for-small">
-			<cfoutput>#view('nav/left-side-nav')#</cfoutput>
+			<div class="<cfoutput>#rc.columnClass#</cfoutput> columns mobile-four panel">
+				<!--- NOTE: This is where the real content is rendered... --->
+				<cfoutput>#body#</cfoutput>
+				</div>
 		</div>
 
-		<div class="nine columns mobile-four panel">
-			<!--- <div class="nine columns push-three panel"> ---> <!-- Main Content Section -->
-			 <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+			<!--- Footer --->
+			<footer class="row">
+				<div class="ten columns centered" style="text-align:center;">
+					<p>&copy; Philo Lodge No. 243 &nbsp;Free &amp; Accepted Masons, South River, N.J. USA 08882 - (732) 254-9867 (Tel.)  <i class="general foundicon-phone"></i></p>
+				</div>
+			</footer>
 
-			<cfoutput>#body#</cfoutput>
+		<cfinclude template="main/orbitInclude.cfm"><!--- Include the Orbit Scripts --->
+		<cfinclude template="main/modalForm.cfm"><!---  Include the Reveal Modal DIV --->
 
-			 <cfoutput>#content#</cfoutput><!--- Content set by pageDriver.cfm --->
-			</div>
-	</div>
-
-		<!--- Footer --->
-		<footer class="row">
-			<div class="ten columns centered" style="text-align:center;">
-				<p>&copy; Philo Lodge No. 243 &nbsp;Free &amp; Accepted Masons, South River, N.J. USA 08882 - (732) 254-9867 (Tel.)  <i class="general foundicon-phone"></i></p>
-			</div>
-		</footer>
-
-	<cfinclude template="main/orbitInclude.cfm"><!--- Include the Orbit Scripts --->
-	<cfinclude template="main/modalForm.cfm"><!---  Include the Reveal Modal DIV --->
-
- 	<!--- allows multiple onload events --->
- 	<script src="javascripts/addLoadEvent.js"></script>
-	<!--- jQuery and jQuery UI --->
-	<!--- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>--->
-  	<!--- <script type='text/javascript' src='javascripts/jquery-ui.js'></script>--->
+	 	<!--- allows multiple onload events --->
+	 	<script src="/assets/javascripts/addLoadEvent.js"></script>
+		<!--- jQuery and jQuery UI --->
+		<!--- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>--->
+	  	<!--- <script type='text/javascript' src='javascripts/jquery-ui.js'></script>--->
 
 
-
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			_uacct = "UA-2349423-1";
+			urchinTracker();
+		</script>
 	</body>
 </html>
 
