@@ -1,3 +1,7 @@
+<cfscript>
+	// setLayout('main', true);
+</cfscript>
+
 <!--- The Orbit fader is initialized at the bottom of the page by calling .orbit() on #fader --->
 <!--- <cfoutput>#view('tests/debug/sesion')#</cfoutput> --->
 

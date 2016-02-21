@@ -43,27 +43,22 @@
 		<div class="nine columns mobile-four panel">
 			<!--- <div class="nine columns push-three panel"> ---> <!-- Main Content Section -->
 			 <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-				<cfoutput>#body#</cfoutput>
+
+			<cfoutput>#body#</cfoutput>
+
 			 <cfoutput>#content#</cfoutput><!--- Content set by pageDriver.cfm --->
 			</div>
 	</div>
 
 		<!--- Footer --->
 		<footer class="row">
-			<div class="three columns" style="text-align:center;"></div>
-			<div class="nine columns" style="text-align:center;">
+			<div class="ten columns centered" style="text-align:center;">
 				<p>&copy; Philo Lodge No. 243 &nbsp;Free &amp; Accepted Masons, South River, N.J. USA 08882 - (732) 254-9867 (Tel.)  <i class="general foundicon-phone"></i></p>
 			</div>
 		</footer>
 
 	<cfinclude template="main/orbitInclude.cfm"><!--- Include the Orbit Scripts --->
 	<cfinclude template="main/modalForm.cfm"><!---  Include the Reveal Modal DIV --->
-
-
-
-
-
-
 
  	<!--- allows multiple onload events --->
  	<script src="javascripts/addLoadEvent.js"></script>
@@ -78,3 +73,4 @@
 
 <cfdump expand="false" var=#rc# label="##rc##">
 <cfdump expand="false" var=#request#>
+
