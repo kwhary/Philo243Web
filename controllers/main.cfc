@@ -10,6 +10,8 @@ component accessors=true {
 		rc.name = variables.greetingService.greet( rc.name );
 		// rc.rotateData = variables.rotateService.rotateInfo([1,2,3,4,5,6]);
 
+		rc.rotate = variables.rotateService;
+
 		// NOTE: Check to see if we want to debug the app
 		if ( rc.debugApplication ) {
 			writeDump(var=application, expand=false, label='Application Scope');
@@ -29,6 +31,14 @@ component accessors=true {
 			writeDump(var=session, expand=false, label='Session Scope');
 		}
 	}
+
+
+
+
+
+
+
+
 
 	function rotate_Quote() {
 		quoteArray = ArrayNew(1);
