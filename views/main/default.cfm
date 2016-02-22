@@ -148,7 +148,7 @@
 </div>
 
 <cfscript>
-  quotesJSONData - rc.quotes.getJSON();
-  writeDump(var=quotestJSON(), expand=false)
+  quotesJSONData = rc.quotes.getJSON();
+  writeDump(var=quotesJSONData, expand=false)
 
 </cfscript>
