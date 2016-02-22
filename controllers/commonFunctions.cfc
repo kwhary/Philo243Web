@@ -1,21 +1,21 @@
 <cfcomponent output="true">
 
 <cffunction access="remote" name="getMemberDates" returntype="query" hint="returns member birthday info">
-	
+
 		<cfquery DATASOURCE="lodge_members" name="getBirthdays">
-			SELECT 
+			SELECT
 				Date() as current_date,
 				DateDiff('yyyy', mdate, Now()) AS NumYears ,
 			    DateDiff('yyyy', DateAdd('yyyy',  adjyear,  mdate), Now()) AS AdjustedYears,
-				lastName, 
-				firstName, 
-				midname, 
+				lastName,
+				firstName,
+				midname,
 				mst,
-				email, 
-				mdate, 
-				stats, 
-				ypm, 
-				pmlodge, 
+				email,
+				mdate,
+				stats,
+				ypm,
+				pmlodge,
 				glnum
 			FROM memdat
 			WHERE  glnum NOT IN (SELECT glnum FROM  omit)
@@ -29,11 +29,11 @@
 
 </cffunction>
 
-<!--- 
+<!---
 <cffunction name="outPutDigest" access="private" output="true" returntype="string">
 
 	<cfsavecontent variable="digestHTML">
-		
+
 		<cfoutput>
 
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -44,11 +44,11 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Inside the Lodge</title>
-			
+
 		<link rel="stylesheet" type="text/css" href="http://www.philolodge.net/stylesheets/email.css" >
 
 		</head>
-		 
+
 		<body bgcolor="##FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
 
 		<!--- HEADER --->
@@ -56,7 +56,7 @@
 			<tr>
 				<td></td>
 				<td class="header container" align="">
-					
+
 					<!--- /content --->
 					<div class="content">
 						<table bgcolor="##00000" >
@@ -66,7 +66,7 @@
 							</tr>
 						</table>
 					</div><!--- /content --->
-					
+
 				</td>
 				<td></td>
 			</tr>
@@ -77,17 +77,17 @@
 			<tr>
 				<td></td>
 				<td class="container" align="" bgcolor="##FFFFFF">
-					
+
 					<!--- content --->
 					<div class="content">
 						<table bgcolor="" id="tblWrapper">
 
 
-						<!--- Content loop gets dynamically built here --->			
-						
+						<!--- Content loop gets dynamically built here --->
+
 
 						</table>
-					
+
 					</div><!--- /content --->
 
 					<div class="content">
@@ -95,7 +95,7 @@
 					<table id="birthdays" class="social" bgcolor="" border=1>
 						<tr>
 							<td class="container">
-								
+
 									<!--- content --->
 									<div class="content">
 										<table border=0>
@@ -105,7 +105,7 @@
 												<tr>
 													<td align="right">#bd.mst# #bd.firstName# #bd.lastName# - </td>
 													<td align="left"> <strong>#bd.AdjustedYears#</strong> years - Raised #DateFormat('#bd.mdate#','mm-dd-yyyy')#</td>
-												</tr>												
+												</tr>
 											</cfloop>
 											<cfif #getBirthdays.recordCount#>
 													<tr><td colspan=2 id="congrats" align="center"><br><strong>Congratulations Brethren !</strong></td></tr>
@@ -113,7 +113,7 @@
 
 										</table>
 									</div><!--- /content --->
-									
+
 							</td>
 						</tr>
 					</table><!--- /BIRTHDAYS --->
@@ -124,21 +124,21 @@
 						<table bgcolor="">
 							<tr>
 								<td>
-									
+
 									<!--- social & contact --->
 									<table bgcolor="" class="social" width="100%">
 										<tr>
 											<td>
-												
+
 												<!--- column 1 --->
 												<div class="column">
 													<table bgcolor="" cellpadding="" align="left">
 														<tr>
-														<td>				
-														
+														<td>
+
 														<h5 class="">Connect with Philo Lodge:</h5>
 														<p class=""><a href="https://www.facebook.com/Philo-Lodge-No-243-FAM-104775649554798/" class="soc-btn fb">Facebook</a></p>
-								
+
 														</td>
 														</tr>
 													</table><!--- /column 1 --->
@@ -148,28 +148,28 @@
 												<div class="column">
 													<table bgcolor="" cellpadding="" align="left">
 												<tr>
-													<td>				
-																					
-														<h5 class="">Contact Info:</h5>												
+													<td>
+
+														<h5 class="">Contact Info:</h5>
 														<p>Phone: <strong>732.254.9867</strong><br/>
 		                Email: <strong><a href="emailto:secretary@philolodge.net">secretary@philolodge.net</a></strong></p>
-		                
+
 													</td>
 												</tr>
-											</table><!--- /column 2 --->	
+											</table><!--- /column 2 --->
 												</div>
-												
+
 												<div class="clear"></div>
-			
+
 											</td>
 										</tr>
 									</table><!--- /social & contact --->
-									
+
 								</td>
 							</tr>
 						</table>
 					</div><!--- /content --->
-					
+
 
 				</td>
 				<td></td>
@@ -181,7 +181,7 @@
 			<tr>
 				<td></td>
 				<td class="container">
-					
+
 						<!--- content --->
 						<div class="content">
 							<table>
@@ -194,7 +194,7 @@
 								</tr>
 							</table>
 						</div><!--- /content --->
-						
+
 				</td>
 				<td></td>
 			</tr>
@@ -208,7 +208,7 @@
 	<cfreturn digestHTML>
 </cffunction>
 --->
-	
+
 
 
 
