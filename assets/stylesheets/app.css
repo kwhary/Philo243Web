@@ -1,6 +1,6 @@
 /* Artfully masterminded by ZURB  */
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
@@ -8,11 +8,30 @@
 :: Page Name 2
 */
 
-body {background: #192532 url(../images/master-bg.jpg) repeat-x top left;}
-body {color:white}
+body {
+    background: #192532 url('/assets/images/master-bg.jpg') repeat-x top left;
+    color: white
+}
 
-p,h5.index {color: #617E86; text-align:center;}
-h5.indexSub {color: #F5F6CE; text-align:center;}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff;
+}
+
+p,
+h5.index {
+    color: #617E86;
+    text-align:center;
+}
+
+h5.indexSub {
+    color: #F5F6CE;
+    text-align: center;
+}
 h4,h5,h5.trestleboard, h5.sideBarFader {color: #A09AFF}
 h5.sideBarFader {text-align:center;}
 p.profileLeft {text-align:left;}
@@ -27,28 +46,29 @@ table tbody tr:nth-child(even) { background: #262525; }
 /*.row { width: 940px; max-width: 100%; min-width: 768px; margin: 0 auto; } */
 
 /* .twelve, .row .twelve { margin-bottom: 1px; padding-bottom: 1px; border-bottom-width:1px;} */
+
 /*  Margin, Border, Padding, Content */
 .column { float: left; min-height: 1px; padding: 0 8px; position: relative; }
 .columns { float: left; min-height: 1px; padding: 0px 2px 0px 2px; position: relative; } /* padding T R B L */
 
-.panel { 	
+.panel {
 	 background: rgb(41 ,61, 81);   /* Fall back color for IE*/
-background: rgba(0, 0, 0, 0.1); 
-	 border: solid 0.1px rgb(41 ,61, 81);   /* Fall back color for IE*/	
+background: rgba(0, 0, 0, 0.1);
+	 border: solid 0.1px rgb(41 ,61, 81);   /* Fall back color for IE*/
 border: solid 0.1px rgba(0, 0, 0, 0.6);
 margin: 0 0 5px 0; padding: 20px; }
 
-.panel.callout { 
+.panel.callout {
 /* background: #37516C; */
 background: rgb(41 ,61, 81);   /* Fall back color for IE*/
-background: rgba(0, 0, 0, 0.1); 
-color: #fff; 
+background: rgba(0, 0, 0, 0.1);
+color: #fff;
 	border: solid 0.1px rgb(41 ,61, 85);/* Fall back color for IE*/
-border: solid 0.1px rgba(0, 0, 0, 0.6); 	 
+border: solid 0.1px rgba(0, 0, 0, 0.6);
 -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5);
--moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5); 
+-moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5);
 box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5); }
-	
+
 .panel.callout a { color: #fff; }
 
 ul, ol {color: #617E86;}
@@ -144,7 +164,7 @@ open-reveal-modal-error:not(.button) { font-size: 22px; font-size: 2.2rem; line-
 /* Block Quote */
 blockquote { border-left: 0px solid #ddd; }
 /* -----------------------------------------
-  Nav Bar Overrides  
+  Nav Bar Overrides
 ----------------------------------------- */
 .mainNav {margin: 0px 0px 0px 0px; }
 .nav-bar { height: 40px; background: #37516C; margin-left: 0; margin-top: 0px; padding: 0; }
