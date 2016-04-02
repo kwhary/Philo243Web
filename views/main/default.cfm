@@ -1,3 +1,8 @@
+<cfscript>
+  quotesData = rc.quotes.getData();
+  writeDump(var=quotesData, expand=false)
+</cfscript>
+
 <cfoutput>Hello #rc.name#!</cfoutput>
 
 <!--- Three-up Content Blocks --->
@@ -146,9 +151,3 @@
 
   </div>
 </div>
-
-<cfscript>
-  quotesJSONData = rc.quotes.getJSON();
-  writeDump(var=quotesJSONData, expand=false)
-
-</cfscript>
