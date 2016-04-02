@@ -45,65 +45,21 @@
       <span class="orbit-caption" id="profile10">Read about Bud</span>
     </div>
 
-    <h5 align="center" class="hide-for-small"><a href="default.cfm?pageType=pi">Member Profiles</a>&nbsp;&nbsp;<i class="foundicon-page" style="color:white"></i></h5>
+    <h5 align="center" class="hide-for-small"><a href="default.cfm?pageType=pi">Member Profiles</a> <i class="foundicon-page" style="color:white"></i></h5>
 
     <!--- NOTE: Rotate the quotations --->
     <div id="quoteSlider" class="panel radius hide-for-small">
-      <div>
+
+    <!--- // NOTE: Random Quotes --->
+    <cfloop from="1" to="10" index="quote">
+        <cfoutput><div>
         <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
+          <p class="profileLeft">#rc.quotes.random()#</p>
         </blockquote>
       </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
-      <div>
-        <blockquote>
-          <p class="profileLeft"><cfoutput>#rc.quotes.random()#</cfoutput></p>
-        </blockquote>
-      </div>
+      </cfoutput>
+    </cfloop>
+
     </div>
 
     <div class="panel radius hide-for-small">
