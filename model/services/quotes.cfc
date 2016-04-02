@@ -62,8 +62,7 @@ component accessors=true {
   }
 
   function getJSON() {
-    data = getData();
-    return variables.fw.renderData( 'json', data );
+    return renderData( 'json', getData() );
   }
 
 }
