@@ -1,9 +1,10 @@
 <cfscript>
-  quotesData = rc.quotes.getData();
+  quotesData = rc.quotes.getAll();
   writeDump(var=quotesData, expand=false)
 </cfscript>
 
-<cfoutput>Hello #rc.name#!</cfoutput>
+<cfoutput>Hello #rc.name#!
+</cfoutput>
 
 <!--- Three-up Content Blocks --->
 
@@ -12,11 +13,11 @@
   <div class="four columns mobile-two">
     <!--- <img class="hide-for-small" src="assets/images/columnHeader1-400x209.png" /> --->
     <img class="hide-for-small" src="assets/images/columnHeader7-400x209.png" />
-    <h5 class="index">Upcoming Events &nbsp;&nbsp;<i class="foundicon-calendar" style="color:white"></i></h5>
-    <!--- <cfinclude template="UpcomingEvents.cfm">--->
+    <h5 class="index">Upcoming Events <i class="foundicon-calendar" style="color:white"></i></h5>
     <!--- <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=buildCalendar(6,'#application.calendarID#','main')"> --->
-    <!--- <cfinclude template="UpcomingEventsIframe.cfm"> --->
-    <cfoutput>#view('events/upcoming/UpcomingEventsIframe')#</cfoutput>
+
+    <cfoutput>#view('events/upcoming/UpcomingEventsIframe')#
+    </cfoutput>
   </div>
 
   <div class="four columns hide-for-small">

@@ -1,5 +1,5 @@
 component accessors=true {
-  function getData() {
+  function getAll() {
     // NOTE: Hard code our quote data since there's no table for it.
     data = arrayNew(1);
 
@@ -57,12 +57,12 @@ component accessors=true {
   }
 
   function random() {
-    quotes = getData();
+    quotes = getAll();
     return quotes[randRange(1, arrayLen(quotes))];
   }
 
   function getJSON() {
-    return renderData( 'json', getData() );
+    return renderData( 'json', getAll() );
   }
 
 }
