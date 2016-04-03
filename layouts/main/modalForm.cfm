@@ -1,4 +1,6 @@
-<script type="text/javascript">
+<cfoutput>
+<!---
+    <script type="text/javascript">
 
    //theclickedURL = document.getElementById("memberServices").getAttribute("href");
   // var pageType = getURLParameter(theclickedURL, 'pageType');
@@ -14,9 +16,7 @@
 //	}
 
    // alert(document.getElementById("myNav").getAttribute("href"));
-</script>
 
-<script type="text/javascript">
 
 	var subCount = 0;
 	$(document).ready(function() {
@@ -31,7 +31,7 @@
 
     	});
 
-		//$("#memberServices").click(function() {  // this works with ID
+		//$("##memberServices").click(function() {  // this works with ID
         // alert('memberservices is clicked');
         // return true;
         //});
@@ -43,7 +43,7 @@
 
 
 		// Attach a submit handler to the form
-		$( "#logInFormID" ).submit(function( event ) {
+		$( "##logInFormID" ).submit(function( event ) {
 
 			event.preventDefault();  // Stop form from submitting normally
 
@@ -78,7 +78,7 @@
 
 			if (returnData["STATUS"] == "OK") {  // Let them in
 				$( "div.login_message" ).replaceWith( "<div class='login_message'>"+ returnData["ERRORMSG"] +"</div>" );
-				$('#loginModal').trigger('reveal:close');
+				$('##loginModal').trigger('reveal:close');
 
 				if (typeof theRequestedPage != 'undefined') {
 					window.location=theRequestedPage;
@@ -94,7 +94,7 @@
 					if (subCount > 2){ // Too many attempted logins
 						$( "div.login_message" ).replaceWith( "<div class='login_message'><h5>The following error has occurred during login;</h5><h6 style='color:white'>"+ returnData["ERRORMSG"] +"</h6></div>" );
 						$( "div.login_message" ).append( "<br>Too Many Attempts" );
-						$('#loginModal').trigger('reveal:close');
+						$('##loginModal').trigger('reveal:close');
 						window.location="index.cfm";
 					}
 					else {
@@ -113,8 +113,8 @@
 	});//document ready
 
 </script>
+--->
 
-<cfoutput>
 <div id="loginModal" class="reveal-modal small">
 
 <!--- <cfdump var="#session#" expand="no"><cfdump var="#application#" expand="no"> --->
