@@ -1,18 +1,16 @@
 <cfscript>
-  quotesData = rc.quotes.getAll();
-  writeDump(var=quotesData, expand=false)
-</cfscript>
+  // quotesData = rc.quotes.getAll();
+  // writeDump(var=quotesData, expand=false)
 
-<cfoutput>Hello #rc.name#!
-</cfoutput>
+  writeOutput('Hello ' & rc.name &'!');
+</cfscript>
 
 <!--- Three-up Content Blocks --->
 
 <!--- <cfinclude template="../../layouts/main/contentBlocks.cfm"> --->
 <div class="row">
   <div class="four columns mobile-two">
-    <!--- <img class="hide-for-small" src="assets/images/columnHeader1-400x209.png" /> --->
-    <img class="hide-for-small" src="assets/images/columnHeader7-400x209.png" />
+    <img class="hide-for-small" src="/assets/images/columnHeader7-400x209.png" />
     <h5 class="index">Upcoming Events <i class="foundicon-calendar" style="color:white"></i></h5>
     <!--- <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=buildCalendar(6,'#application.calendarID#','main')"> --->
 
@@ -21,18 +19,20 @@
   </div>
 
   <div class="four columns hide-for-small">
+
+    <cfdump var="#rc.profiles.getAll()#" expand="false">
+
     <div id="ProfileFader" class="hide-for-small">
-      <img src="assets/images/blankProfile400x209.jpg" /><!--- background image with no profile image --->
+      <img src="/assets/images/profiles/blankProfile400x209.jpg" /><!--- background image with no profile image --->
 
-      <a data-caption="#profile2" href="default.cfm?pageType=p&profile=2"><img src="assets/images/JohnDProfile400x209.jpg" /></a>
-      <a data-caption="#profile5" href="default.cfm?pageType=p&profile=5"><img src="assets/images/SocialTraditions400x209.jpg" /></a>
-      <a data-caption="#profile6" href="default.cfm?pageType=p&profile=6"><img src="assets/images/JTothProfile400x209.jpg" /></a>
-      <a data-caption="#profile7" href="default.cfm?pageType=p&profile=7"><img src="assets/images/MikeAProfile400x209.jpg" /></a>
-      <a data-caption="#profile8" href="default.cfm?pageType=p&profile=8"><img src="assets/images/BWharyProfile400x209.jpg" /></a>
-      <a data-caption="#profile9" href="default.cfm?pageType=p&profile=9"><img src="assets/images/DavieProfile400x209.jpg" /></a>
-      <a data-caption="#profile10" href="default.cfm?pageType=p&profile=10"><img src="assets/images/BudProfile400x209.jpg" /></a>
-
-      <a data-caption="#profile1" href="default.cfm?pageType=p&profile=1"><img src="assets/images/KWharyProfile400x209.jpg" /></a>
+      <a data-caption="#profile2" href="default.cfm?pageType=p&profile=2"><img src="/assets/images/profiles/JohnDProfile400x209.jpg" /></a>
+      <a data-caption="#profile5" href="default.cfm?pageType=p&profile=5"><img src="/assets/images/SocialTraditions400x209.jpg" /></a>
+      <a data-caption="#profile6" href="default.cfm?pageType=p&profile=6"><img src="/assets/images/profiles/JTothProfile400x209.jpg" /></a>
+      <a data-caption="#profile7" href="default.cfm?pageType=p&profile=7"><img src="/assets/images/profiles/MikeAProfile400x209.jpg" /></a>
+      <a data-caption="#profile8" href="default.cfm?pageType=p&profile=8"><img src="/assets/images/profiles/BWharyProfile400x209.jpg" /></a>
+      <a data-caption="#profile9" href="default.cfm?pageType=p&profile=9"><img src="/assets/images/profiles/DavieProfile400x209.jpg" /></a>
+      <a data-caption="#profile10" href="default.cfm?pageType=p&profile=10"><img src="/assets/images/profiles/BudProfile400x209.jpg" /></a>
+      <a data-caption="#profile1" href="default.cfm?pageType=p&profile=1"><img src="/assets/images/profiles/KWharyProfile400x209.jpg" /></a>
 
       <!--- <img data-caption="#profile3" src="http://placehold.it/400x209&text=[profile 3]" /> --->
 
@@ -86,7 +86,7 @@
     </div>
 
     <div class="panel radius hide-for-small">
-      <h5 class="indexSub">Follow Us on Facebook<a target="_blank" href="http://www.facebook.com/pages/Philo-Lodge-No-243-FAM/104775649554798"><IMG src="assets/images/facebook.jpg" alt="follow on facebook"/></a></h5>
+      <h5 class="indexSub">Follow Us on Facebook<a target="_blank" href="http://www.facebook.com/pages/Philo-Lodge-No-243-FAM/104775649554798"><IMG src="/assets/images/facebook.jpg" alt="follow on facebook"/></a></h5>
     </div>
 
     <div class="panel radius hide-for-small">
@@ -100,7 +100,7 @@
   </div>
 
   <div class="four columns mobile-two">
-    <img class="hide-for-small" src="assets/images/columnHeader9-400x209.png" />
+    <img class="hide-for-small" src="/assets/images/columnHeader9-400x209.png" />
     <h5  class="index">Items of Note &nbsp;&nbsp;<i class="foundicon-calendar" style="color:white"></i></h5>
 
     <!--- <cfinclude template="LevelClubCalendarIframe.cfm"> --->
