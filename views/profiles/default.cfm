@@ -1,5 +1,23 @@
-<cfoutput><h2>Meet our Members</h2>
+<cfoutput><h1>#rc.page.title#</h1>
 <section class="profiles">
+</cfoutput>
+
+<cfloop from="1" to="#arrayLen(rc.activeMembers)#" index="m">
+    <cfoutput><article class="profile panel">
+        <div class="row">
+            <div class="two columns">
+                <a href="##"><img src="#rc.activeMembers[m].image#" alt="#rc.activeMembers[m].name #"></a>
+            </div>
+            <div class="ten columns">
+                <p>#rc.activeMembers[m].teaser#</br>[ <a href="#buildURL('profiles.profile_1')#">Read more about #rc.activeMembers[m].name# .....  </a>]</p>
+            </div>
+        </div>
+    </article>
+</cfoutput>
+</cfloop>
+
+<cfoutput>
+    <hr>
     <article class="profile panel">
         <div class="row">
             <div class="two columns">
@@ -28,8 +46,7 @@
                 <a href="#buildURL('profiles.profile_2')#"><img src="/assets/images/profiles/johnD-thumb.jpg" alt="profile2 image"></a>
             </div>
             <div class="ten columns">
-                <p>Our ritual, which has a special place in our Craft, does teach important lessons to those who exemplify it and those who witness it.
-     &nbsp;There are also important lessons that a Brother would learn if he was so inclined to be able to become an officer of the Lodge. [ <a href="#buildURL('profiles.profile_2')#">Read more about John .....  </a>]</p>
+                <p>Our ritual, which has a special place in our Craft, does teach important lessons to those who exemplify it and those who witness it. There are also important lessons that a Brother would learn if he was so inclined to be able to become an officer of the Lodge. [ <a href="#buildURL('profiles.profile_2')#">Read more about John .....  </a>]</p>
             </div>
         </div>
     </article>
