@@ -14,7 +14,7 @@
     <h5 class="index">Upcoming Events <i class="foundicon-calendar" style="color:white"></i></h5>
     <!--- <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=buildCalendar(6,'#application.calendarID#','main')"> --->
 
-    <cfoutput>#view('events/upcoming/UpcomingEventsIframe')#
+    <cfoutput>#view('events/upcoming-events-iframe')#
     </cfoutput>
   </div>
 
