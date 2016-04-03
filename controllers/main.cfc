@@ -1,6 +1,7 @@
 component accessors=true {
   property greetingService;
-  property quotesService;
+  property profileService;
+  property quoteService;
   // property securityService;
 
   function default( struct rc ) {
@@ -9,7 +10,12 @@ component accessors=true {
     param name='rc.debugApplication' default=0;
 
     rc.name = variables.greetingService.greet( rc.name );
-    rc.quotes = variables.quotesService;
+
+    // NOTE: Add Profiles service to the request context.
+    rc.profiles = variables.profileService;
+
+    // NOTE: Add Quotes service to the request context.
+    rc.quotes = variables.quoteService;
 
     // NOTE: Check to see if we want to debug the app
     if ( rc.debugApplication ) {
