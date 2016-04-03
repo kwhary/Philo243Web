@@ -25,5 +25,3 @@ Philo Lodge No. 243<br>
 
 <p>If this problem persists, please contact the <a href="mailto:secretary@philolodge.net?subject=Exception Error on the Website">Web Master.</a></p>
 </cfoutput>
-
-<cfdump var="#rc#"/>
