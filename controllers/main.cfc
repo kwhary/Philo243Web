@@ -6,8 +6,10 @@ component accessors=true {
 
   function default( struct rc ) {
     param name="rc.name" default="anonymous";
-    param name='rc.debugSession' default=0;
-    param name='rc.debugApplication' default=0;
+    param name='rc.debugSession' default=0 type='boolean';
+    param name='rc.debugApplication' default=0 type='boolean';
+    param name='rc.debugRequest' default=0 type='boolean';
+    param name='rc.page.title' default='' type='string';
 
     rc.name = variables.greetingService.greet( rc.name );
 
@@ -17,9 +19,17 @@ component accessors=true {
     // NOTE: Add Quotes service to the request context.
     rc.quotes = variables.quoteService;
 
+    // NOTE: Add Quotes service to the request context.
+    // rc.security = variables.securityService;
+
     // NOTE: Check to see if we want to debug the app
     if ( rc.debugApplication ) {
       writeDump(var=application, expand=false, label='Application Scope');
+    }
+
+    // NOTE: Check to see if we want to debug the request
+    if ( rc.debugRequest ) {
+      writeDump(var=request, expand=false, label='Request Scope');
     }
 
     // NOTE: Check to see if we want to debug the session
