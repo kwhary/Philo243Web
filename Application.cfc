@@ -6,6 +6,9 @@
   <cfset THIS.scriptProtect = true>
   <cfset THIS.applicationtimeout="#createtimespan(0,1,0,0)#">
 
+  <!--- Enable CFOUTPUT Only --->
+  <cfsetting enablecfoutputonly="yes">
+
   <cffunction name="onApplicationStart">
 
       <!--- <cfset application.datasource = "lodge_members"> --->
