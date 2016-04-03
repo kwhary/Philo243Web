@@ -8,8 +8,9 @@
     }
 </cfscript>
 
+<cfoutput>
 <!--- Drives the page to the requested content include --->
-<cfinclude template="main/pageDriver.cfm">
+<!--- <cfinclude template="main/pageDriver.cfm"> --->
 
 <!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
@@ -27,7 +28,8 @@
         <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css" />
         <link rel="stylesheet" href="/assets/stylesheets/general_foundicons.css">
         <link rel="stylesheet" href="/assets/stylesheets/app.css" /><!---  local modifications --->
-        <title><cfoutput>#pageTitle# - Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA</cfoutput></title>
+        <title>#rc.page.title# - Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA</title>
+
         <!--- Custom Modernizr for Foundation --->
         <script src="/assets/javascripts/modernizr.foundation.js"></script>
 
@@ -36,25 +38,28 @@
         <script src="/assets/javascripts/app.js"></script>
     </head>
     <body>
+    </cfoutput>
+
         <cfif rc.action eq 'main.default'>
             <cfinclude template="main/keyMessageLoaderMobile.cfm">
             <cfoutput>#view('main/key-messages')#</cfoutput>
         </cfif>
 
+        <cfoutput>
         <!-- Header and Nav -->
-        <cfoutput>#view('nav/main-nav')#</cfoutput>
+        #view('nav/main-nav')#
         <!-- End Header and Nav -->
 
         <div class="row">
             <cfif rc.showNav eq 1>
                 <div id="defaultSideBar" class="three columns hide-for-small">
-                    <cfoutput>#view('nav/left-side-nav')#</cfoutput>
+                    #view('nav/left-side-nav')#
                 </div>
             </cfif>
 
-            <div class="<cfoutput>#rc.columnClass#</cfoutput> columns mobile-four panel">
+            <div class="#rc.columnClass# columns mobile-four panel">
                 <!--- NOTE: This is where the real content is rendered... --->
-                <cfoutput>#body#</cfoutput>
+                #body#
                 </div>
         </div>
 
@@ -64,12 +69,14 @@
                     <p>&copy; Philo Lodge No. 243 &nbsp;Free &amp; Accepted Masons, South River, N.J. USA 08882 - (732) 254-9867 (Tel.)  <i class="general foundicon-phone"></i></p>
                 </div>
             </footer>
+</cfoutput>
 
         <!--- Include the Orbit Scripts --->
         <!--- <cfinclude template="main/orbitInclude.cfm"> --->
 
         <cfinclude template="main/modalForm.cfm"><!---  Include the Reveal Modal DIV --->
 
+<cfoutput>
         <!--- allows multiple onload events --->
         <!--- <script src="/assets/javascripts/addLoadEvent.js"></script> --->
 
@@ -85,6 +92,7 @@
         </script>
     </body>
 </html>
+</cfoutput>
 
 <cfdump expand="false" var=#rc# label="##rc##">
 <cfdump expand="false" var=#request#>
