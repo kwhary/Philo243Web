@@ -4,6 +4,16 @@ component accessors=true {
   property quoteService;
   // property securityService;
 
+    function init( fw ) {
+        variables.framework = fw;
+        return this;
+    }
+
+    // make your controller bean factory aware
+    function setBeanFactory( beanFactory ) {
+        variables.beanFactory = beanFactory;
+    }
+
   function default( struct rc ) {
     param name="rc.name" default="anonymous";
     param name='rc.debugSession' default=0 type='boolean';
@@ -13,7 +23,6 @@ component accessors=true {
     // NOTE: Set page title
     rc.page.title = 'Home';
     rc.page.subtitle = '';
-    rc.page.titleSuffix = "- Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA";
 
     rc.name = variables.greetingService.greet( rc.name );
 
@@ -62,8 +71,16 @@ component accessors=true {
   }
 
   function byLaws( struct rc ) {
+    // param name='session.loggedin' default=0 type='boolean';
+
     rc.page.title = 'By-Laws';
     rc.page.subtitle = '';
+
+    // NOTE: Check to see if the visitor has signed in.
+    // TODO: Determine if we can call a view here that redirects to the login page.
+    if ( session.loggedin eq 0 ) {
+        writeOutput("<h3>Not Logged In</h3>");
+    }
   }
 
   function history( struct rc ) {
