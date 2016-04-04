@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="/assets/stylesheets/foundation.min.css" />
         <link rel="stylesheet" href="/assets/stylesheets/general_foundicons.css">
         <link rel="stylesheet" href="/assets/stylesheets/app.css" /><!---  local modifications --->
-        <title>#rc.page.title# - Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA</title>
+        <title>#rc.page.title# - #application.pageSuffix#</title>
 
         <!--- Custom Modernizr for Foundation --->
         <script src="/assets/javascripts/modernizr.foundation.js"></script>
@@ -94,6 +94,6 @@
 </html>
 </cfoutput>
 
-<cfdump expand="false" var=#rc# label="##rc##">
+<cfdump expand="false" var=#application#>
 <cfdump expand="false" var=#request#>
-
+<cfdump expand="false" var=#rc# label="##rc##">

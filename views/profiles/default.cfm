@@ -2,11 +2,12 @@
 <section class="profiles">
 </cfoutput>
 
+<!--- NOTE: Loop over all active members --->
 <cfloop from="1" to="#arrayLen(rc.activeMembers)#" index="m">
     <cfoutput><article class="profile panel">
         <div class="row">
             <div class="two columns">
-                <a href="##"><img src="#rc.activeMembers[m].image#" alt="#rc.activeMembers[m].name #"></a>
+                <a href="##"><img src="#rc.activeMembers[m].image#" alt="#rc.activeMembers[m].name#"></a>
             </div>
             <div class="ten columns">
                 <p>#rc.activeMembers[m].teaser#</br>[ <a href="#buildURL('profiles.profile_1')#">Read more about #rc.activeMembers[m].name# .....  </a>]</p>

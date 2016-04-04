@@ -9,7 +9,11 @@ component accessors=true {
     param name='rc.debugSession' default=0 type='boolean';
     param name='rc.debugApplication' default=0 type='boolean';
     param name='rc.debugRequest' default=0 type='boolean';
-    param name='rc.page.title' default='' type='string';
+
+    // NOTE: Set page title
+    rc.page.title = 'Home';
+    rc.page.subtitle = '';
+    rc.page.titleSuffix = "- Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA";
 
     rc.name = variables.greetingService.greet( rc.name );
 
@@ -47,13 +51,50 @@ component accessors=true {
     }
   }
 
+  function about( struct rc ) {
+    rc.page.title = 'About Philo Lodge No. 243 Free &amp; Accepted Masons';
+    rc.page.subtitle = '';
+  }
 
+  function because( struct rc ) {
+    rc.page.title = 'Freemason Because';
+    rc.page.subtitle = '';
+  }
 
+  function byLaws( struct rc ) {
+    rc.page.title = 'By-Laws';
+    rc.page.subtitle = '';
+  }
 
+  function history( struct rc ) {
+    rc.page.title = 'Lodge History to 1952';
+    rc.page.subtitle = '';
+  }
 
+  function links( struct rc ) {
+    rc.page.title = 'Links';
+    rc.page.subtitle = '';
+  }
 
+  function lodges( struct rc ) {
+    rc.page.title = 'Other Lodges';
+    rc.page.subtitle = '';
+  }
 
+  function reasons( struct rc ) {
+    rc.page.title = 'Reasons to Join';
+    rc.page.subtitle = '';
+  }
 
+  function religion( struct rc ) {
+    rc.page.title = 'Freemasonry and Religion';
+    rc.page.subtitle = '';
+  }
+
+  function KTRIII( struct rc ) {
+    rc.page.title = 'Synopsis - Knight to Remember III - Medieval Table Lodge';
+    rc.page.subtitle = '';
+  }
 
   function formatPhoneNumber(phone_number) {
     if (Len(phone_number) neq 0 ) {

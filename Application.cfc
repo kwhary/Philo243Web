@@ -1,20 +1,21 @@
 <cfcomponent extends=framework.one>
-  <cfset THIS.name ="PhiloWebSite">
-  <cfset THIS.Sessionmanagement = true>
-  <cfset THIS.Sessiontimeout ="#createtimespan(0,0,20,0)#"><!--- 20 minutes --->
-  <cfset THIS.setDomainCookies = false>
-  <cfset THIS.scriptProtect = true>
-  <cfset THIS.applicationtimeout="#createtimespan(0,1,0,0)#">
+  <cfset this.name ="PhiloWebSite">
+  <cfset this.sessionManagement = true>
+  <cfset this.sessionTimeout ="#createTimeSpan(0,0,20,0)#"><!--- 20 minutes --->
+  <cfset this.setDomainCookies = false>
+  <cfset this.scriptProtect = true>
+  <cfset this.applicationTimeout="#createTimeSpan(0,1,0,0)#"><!--- 1 hour --->
 
   <!--- Enable CFOUTPUT Only --->
-  <cfsetting enablecfoutputonly="yes">
+  <cfsetting enableCFoutputOnly="yes">
 
-  <cffunction name="onApplicationStart">
-
+  <cffunction name="setupApplication"> <!--- Use this instead of of onApplicationStart --->
       <!--- <cfset application.datasource = "lodge_members"> --->
       <cfset application.calendarID = "mghbbc31rk9taddtvgtk37fnko@group.calendar.google.com"><!--- Lodge Main Calendar --->
       <cfset application.clubcalendarID = "lvgv5n8p90q18v7jbkgpbjhb1o@group.calendar.google.com"><!--- Level Club Calendar --->
     <cfset application.googleClientID = "991711430336-9jeg4n3a2uklrj2664unn0amisdckakj.apps.googleusercontent.com">
+  <cfset application.pageSuffix = "Philo Lodge No. 243 Free and Accepted Masons,South River N.J. USA">
+
 <!---
       <cftry>
           <!--- Test whether the DB that this application uses is accessible
@@ -28,7 +29,7 @@
               <cfoutput>
                   This application encountered an error connecting to the datasource.<br>
               </cfoutput>
-              <cflog file="#THIS.Name#" type="error"
+              <cflog file="#this.Name#" type="error"
                   text="Lodge DB not available. message: #cfcatch.message#
                   Detail: #cfcatch.detail# Native Error: #cfcatch.NativeErrorCode#">
               <cfreturn False>
@@ -40,27 +41,25 @@
    </cffunction>
 
   <cffunction name="onSessionStart">
-    <cfset Session.UserID ="">
-    <cfset Session.FName ="">
-    <cfset Session.LName ="">
-    <cfset Session.MST ="">
-    <cfset Session.AdminUser ="">
-    <cfset Session.is_officer ="">
-    <cfset Session.Password ="">
+    <cfset session.UserID ="">
+    <cfset session.FName ="">
+    <cfset session.LName ="">
+    <cfset session.MST ="">
+    <cfset session.AdminUser ="">
+    <cfset session.is_officer ="">
+    <cfset session.Password ="">
     <cfset session.loggedin = false>
   </cffunction>
 
   <cffunction name="onSessionEnd">
-
-      <cfset Session.UserID ="">
-      <cfset Session.FName ="">
-      <cfset Session.LName ="">
-      <cfset Session.MST ="">
-      <cfset Session.AdminUser ="">
-      <cfset Session.is_officer ="">
-      <cfset Session.Password ="">
+      <cfset session.UserID ="">
+      <cfset session.FName ="">
+      <cfset session.LName ="">
+      <cfset session.MST ="">
+      <cfset session.AdminUser ="">
+      <cfset session.is_officer ="">
+      <cfset session.Password ="">
       <cfset session.loggedin = false>
-
   </cffunction>
 
 
