@@ -8,11 +8,7 @@
     }
 </cfscript>
 
-<cfoutput>
-<!--- Drives the page to the requested content include --->
-<!--- <cfinclude template="main/pageDriver.cfm"> --->
-
-<!DOCTYPE html>
+<cfoutput><!DOCTYPE html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
@@ -21,7 +17,6 @@
 
     <head>
         <meta charset="utf-8" />
-        <!--- <meta name="viewport" content="width=device-width" />--->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="keywords" content="Freemasonry,Central New Jersey Freemasons,Philo,Philo Lodge,active lodge, active lodge central NJ,growing lodge">
         <meta name="description" content="A very active and vibrant lodge located in central New Jersey">
@@ -71,20 +66,9 @@
             </footer>
 </cfoutput>
 
-        <!--- Include the Orbit Scripts --->
-        <!--- <cfinclude template="main/orbitInclude.cfm"> --->
-
         <cfinclude template="main/modalForm.cfm"><!---  Include the Reveal Modal DIV --->
 
 <cfoutput>
-        <!--- allows multiple onload events --->
-        <!--- <script src="/assets/javascripts/addLoadEvent.js"></script> --->
-
-        <!--- jQuery and jQuery UI --->
-        <!--- <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>--->
-        <!--- <script type='text/javascript' src='javascripts/jquery-ui.js'></script>--->
-
-
         <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
         <script type="text/javascript">
             _uacct = "UA-2349423-1";
