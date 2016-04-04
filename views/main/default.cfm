@@ -1,11 +1,3 @@
-<cfscript>
-    rc.page.title = 'Home';
-  // quotesData = rc.quotes.getAll();
-  // writeDump(var=quotesData, expand=false)
-
-  // writeOutput('Hello ' & rc.name &'!');
-</cfscript>
-
 <cfoutput>
 <!--- Three-up Content Blocks --->
 

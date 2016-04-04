@@ -1,7 +1,3 @@
-<cfscript>
-    rc.page.title = 'Knight To Remember III - Medieval Table Lodge &amp; Encampment';
-</cfscript>
-
 <cfoutput><div align="center">
 <h1>#rc.page.title#<br><small>"Inundations and Conflagrations"</small></h1>
 </div>

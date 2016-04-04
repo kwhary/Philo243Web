@@ -1,13 +1,9 @@
-<cfscript>
-  rc.page.title = 'About Philo Lodge No. 243 Free &amp; Accepted Masons';
-</cfscript>
-
 <cfoutput>
   <h1>#rc.page.title# </h1>
 
   <p>The name "Philo" was derived from Greek meaning "<em>beloved</em>" or "<em>friendly</em>".</p>
 
-  <p>Philo Lodge No. 243 is located along Old Bridge Turnpike in historic South River N.J. &nbsp;It has been part of the <a href="default.cfm?pageType=h"> history</a> of South River since the early 1920's.  Many of the early charter members of Philo Lodge were prominent citizens in the town.  Bankers, Lawyers, Ministers as well as regular hard working citizens made up the ranks of the early lodge.  They literally built Philo Lodge from the ground up with their dedication to the craft and the community.</p>
+  <p>Philo Lodge No. 243 is located along Old Bridge Turnpike in historic South River N.J. &nbsp;It has been part of the <a href="#buildURL('main.history')#"> history</a> of South River since the early 1920's.  Many of the early charter members of Philo Lodge were prominent citizens in the town.  Bankers, Lawyers, Ministers as well as regular hard working citizens made up the ranks of the early lodge.  They literally built Philo Lodge from the ground up with their dedication to the craft and the community.</p>
 
   <p>Today is no different.  Our members are financial planners, plumbers, computer programmers and technicians, carpenters, auto workers, electricians, retirees and much more.  Our membership is more scattered and diverse than back in the 1920's, however our members are just as dedicated to seeing Freemasonry succeed in South River, in New Jersey and in the United States as a whole.</p>
 
